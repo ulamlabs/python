@@ -308,7 +308,7 @@
         else:
             return "A identity is not confirmed yet"
     
-    # there is one exception when you can use \, when using chaining methods
+    # there is one exception when you can use slashes, when using chaining methods, examples:
     # django ORM:
     posts = Post.objects.filter(blog__id=x)\
                         .filter(created_at__gt=y)\
