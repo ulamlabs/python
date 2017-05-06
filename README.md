@@ -127,24 +127,24 @@
 
     # bad  
     abc = dict(
-      abc=2, cde=5, mama='tata',
-      tata='mama', raz=1, dwa=2
+        abc=2, cde=5, mama='tata',
+        tata='mama', raz=1, dwa=2
     )
 
     # bad
     abc = dict(
-      abc=2, cde=5, mama='tata',
-      tata='mama', raz=1, dwa=2,
+        abc=2, cde=5, mama='tata',
+        tata='mama', raz=1, dwa=2,
     )
 
     # good
     abc = dict(
-      abc=2,
-      cde=5,
-      mama='tata',
-      tata='mama',
-      raz=1,
-      dwa=2,  # <- comma here !
+        abc=2,
+        cde=5,
+        mama='tata',
+        tata='mama',
+        raz=1,
+        dwa=2,  # <- comma here !
     )    
     ```
     
