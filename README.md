@@ -77,7 +77,7 @@
   - [2.1](#indentation--func) **function calls**
   
     ```python
-    abc = qwe(dsadsa(product.to_dict(), cls=DecimalEncoder, mimetype='application/json')) # NO !
+    abc = qwe(dsadsa(product.to_dict(), cls=DecimalEncoder, mimetype='application/json'))  # bad
 
     abc = qwe(dsadsa(product.to_dict(), cls=DecimalEncoder,
               mimetype='application/json'))  # bad
