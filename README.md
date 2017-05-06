@@ -300,11 +300,35 @@
         if a_identity and a_identity.state == "confirmed" else "A identity is not confirmed yet"
 
 
-    # better:
+    # good:
     def x():
         a_identity = self.aidentityconfirm_set.filter(uuid=self.id_at_provider).first()
         if a_identity and a_identity.state == "confirmed":
             return a_identity.get_person_who_registed_y().get_full_name()
         else:
             return "A identity is not confirmed yet"
+    
+    # there is one exception when you can use \, when using chaining methods
+    # django ORM:
+    posts = Post.objects.filter(blog__id=x)\
+                        .filter(created_at__gt=y)\
+                        .filter(desc__contains=z)\
+                        .order_by('created_at')
+                        
+    # Google App Engine NDB
+    greetings = Greeting.query_book(ancestor_key)\
+                        .filter(Greeting.userid >= 40)\
+                        .filter(Greeting.userid < 100)\
+                        .fetch(self.GREETINGS_PER_PAGE)
+                        
+    # SQLAlchemy
+    files = File.query.filter(File.used.is_(False))\
+                      .filter(File.modified < daysago2)\
+                      .yield_per(10)
+    
+    # mongoalchemy
+    place = session.query(Places).filter_by(loc=a)\
+                                 .filter(created_at=b)\
+                                 .descending('created_at').first()
+
     ```
