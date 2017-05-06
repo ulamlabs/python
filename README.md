@@ -51,25 +51,7 @@
         task_b,
         task_c,  # <- comma here
     )
-    ```
-   <a name="inports--quotes"></a><a name="1.4"></a>
-  - [1.4](#inports--quotes) **Single quotes vs double quotes** Use double quotes around strings that are natural language messages and single quotes for small symbol-like strings, for example:
-    ```python
-    LIGHT_MESSAGES = {
-        'english': "There are 3 lights.",
-        'pirate':  "Arr! Thar be 3 lights."
-    }
-    def lights_message(language, number_of_lights):
-        """Return a language-appropriate string reporting the light count."""
-        return LIGHT_MESSAGES[language]
-
-    def is_pirate(message):
-        """Return True if the given message sounds piratical."""
-        return re.search(r"(?i)(arr|avast|yohoho)!", message) is not None
-    ```
-        
-    ref: http://stackoverflow.com/a/56190
-        
+    ```        
         
   ## Indentation
 
@@ -332,3 +314,21 @@
                                  .descending('created_at').first()
 
     ```
+    
+   <a name="indentation--quotes"></a><a name="2.9"></a>
+  - [2.9](#indentation--quotes) **Single quotes vs double quotes** Use double quotes around strings that are natural language messages and single quotes for small symbol-like strings, for example:
+    ```python
+    LIGHT_MESSAGES = {
+        'english': "There are 3 lights.",
+        'pirate':  "Arr! Thar be 3 lights."
+    }
+    def lights_message(language, number_of_lights):
+        """Return a language-appropriate string reporting the light count."""
+        return LIGHT_MESSAGES[language]
+
+    def is_pirate(message):
+        """Return True if the given message sounds piratical."""
+        return re.search(r"(?i)(arr|avast|yohoho)!", message) is not None
+    ```
+        
+    ref: http://stackoverflow.com/a/56190
