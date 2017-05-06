@@ -288,3 +288,23 @@
     if should_be_done:
         # do something big
     ```
+
+  <a name="indentation--slashes"></a><a name="2.8"></a>
+  - [2.8](#indentation--slashes) **slashes** never use them
+
+    ```python
+    # bad:
+    def x():
+        a_identity = self.aidentityconfirm_set.filter(uuid=self.id_at_provider).first()
+        return a_identity.get_person_who_registed_y().get_full_name()\
+        if a_identity and a_identity.state == "confirmed" else "A identity is not confirmed yet"
+
+
+    # better:
+    def x():
+        a_identity = self.aidentityconfirm_set.filter(uuid=self.id_at_provider).first()
+        if a_identity and a_identity.state == "confirmed":
+            return a_identity.get_person_who_registed_y().get_full_name()
+        else:
+            return "A identity is not confirmed yet"
+    ```
