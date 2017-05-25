@@ -337,7 +337,7 @@
   ## Techniques
 
   <a name="techniques--bail-early"></a><a name="3.1"></a>
-  - [2.1](#techniques--bail-early) **Bail early** is idiomatic coding style.
+  - [3.1](#techniques--bail-early) **Bail early** is idiomatic coding style.
   ```python
       # BAD, really bad
       def bad_method(a):
