@@ -4,6 +4,7 @@
 
   1. [Inports](#inports)
   2. [Indentation](#indentation)
+  3. [Techniques](#techniques)
   
   ## Inports
 
@@ -332,3 +333,36 @@
     ```
         
     ref: http://stackoverflow.com/a/56190
+
+  ## Techniques
+
+  <a name="techniques--bail-early"></a><a name="3.1"></a>
+  - [2.1](#techniques--bail-early) **Bail early** is idiomatic coding style.
+  ```python
+      # BAD, really bad
+      def bad_method(a):
+          b = one(a)
+          if b.isgood():
+              c = two(b)
+              if c.isok():
+                  d = three(c)
+                  if d.hasX():
+                      return d
+                  else:
+                      raise NoXError
+               else:
+                    raise NotOKError
+
+      # GOOD, more clear, more obvious            
+      def good_method(a):
+          b = one(a)
+          if not b.isgood():
+              return
+          c = two(b)
+          if not c.isok()
+              raise NotOKError
+          d = three(c)
+          if not d.hasX():
+              raise NoXError
+          return d
+  ```
